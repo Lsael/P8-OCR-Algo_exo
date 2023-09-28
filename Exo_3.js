@@ -1,14 +1,19 @@
 // Créez votre fonction ici
-const calculateAverage = (array) => {
-    if(typeof(array) !== array || array.length === 0) {
+const calculateAverage = (arr) => {
+    if(!Array.isArray(arr) || arr.length === 0) {
         return 'No numbers to calculate average'
     }
 
+    /*
     let total = 0;
-    array.forEach(element => {
+    arr.forEach(element => {
         total += element
     });
-    return total / array.length
+   return total / arr.length
+   */
+
+    // Méthode alternatve avec Array.reduce : 
+    return arr.reduce((accumulator, currentValue) => accumulator + currentValue, 0) / arr.length;
 }
 
 // Exemples d'utilisation de la fonction
